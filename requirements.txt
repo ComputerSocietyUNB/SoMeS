@@ -1,0 +1,9 @@
+invoke
+green==2.12.1
+pytest
+pycodestyle==2.4.0
+pydocstyle==2.1.1
+radon==2.2.0
+codecov==2.0.15
+yamllint
+git+https://github.com/tweepy/tweepy
