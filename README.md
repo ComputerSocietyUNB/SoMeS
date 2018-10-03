@@ -10,6 +10,16 @@ Check those links
 [here](https://apps.twitter.com)
 [here](https://developer.twitter.com/en/docs/basics/.../access-tokens.html)
 
+## Implemented
+
+Text:
+- Twitter
+- Mastodon
+
+Image:
+- Mastodon
+- Twitter
+
 ## Social Medias
 
 Order of implementation

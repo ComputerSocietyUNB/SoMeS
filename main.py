@@ -1,5 +1,7 @@
 import os
 import importlib
+from os import listdir
+from os.path import isfile, join
 from time import strftime
 from config import config
 
@@ -13,7 +15,8 @@ def main():
             media_obj = f'{media.title()}Bot'
             bots[media] = dict(config(section=media.upper()))
             bots[media]['bot'] = getattr(module, media_obj)(bots[media])
-            bots[media]['bot'].send_message(get_message_file())
+            # bots[media]['bot'].send_message(get_message_file())
+            bots[media]['bot'].send_image(get_image_file())
 
 
 def get_message_file(msg_file='msg.txt'):
@@ -27,6 +30,12 @@ def get_message_file(msg_file='msg.txt'):
     except Exception as e:
         print(e)
         exit()
+
+def get_image_file():
+    mypath = f'{os.getcwd()}/image'
+    all_files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+    for img_file in all_files:
+        return f'{mypath}/{img_file}'
 
 
 if __name__ == '__main__':
