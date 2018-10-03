@@ -8,6 +8,7 @@ from config import config
 
 def main():
     available_medias = config()
+    data_type = config('MAIN')
     bots = {}
     for media in available_medias:
         if available_medias[media] == 'true':
@@ -15,8 +16,11 @@ def main():
             media_obj = f'{media.title()}Bot'
             bots[media] = dict(config(section=media.upper()))
             bots[media]['bot'] = getattr(module, media_obj)(bots[media])
+            getattr(bots[media]['bot'],
+                    'send_{data_type['type']}(get_{data_type['type']}_file())'
+            )
             # bots[media]['bot'].send_message(get_message_file())
-            bots[media]['bot'].send_image(get_image_file())
+            # bots[media]['bot'].send_image(get_image_file())
 
 
 def get_message_file(msg_file='msg.txt'):
