@@ -6,4 +6,5 @@ pydocstyle==2.1.1
 radon==2.2.0
 codecov==2.0.15
 yamllint
+Mastodon.py
 git+https://github.com/tweepy/tweepy

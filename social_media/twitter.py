@@ -14,5 +14,5 @@ class TwitterBot():
             self.api.update_status(message)
             return 0
         except Exception as e:
-            print(f'The following error was returned: {e}')
+            print(f'The following error was returned: {e.message}')
             return 1
