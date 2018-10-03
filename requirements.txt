@@ -8,3 +8,4 @@ codecov==2.0.15
 yamllint
 Mastodon.py
 git+https://github.com/tweepy/tweepy
+emoji
